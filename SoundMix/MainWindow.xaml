@@ -1,0 +1,289 @@
+﻿<Window x:Class="SoundMix.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SoundMix"
+        mc:Ignorable="d"
+        Title="SoundMix" Height="640.259" Width="872.69" ResizeMode="NoResize" Icon="src/279541.png">
+    <Grid HorizontalAlignment="Center">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Label x:Name="label" Content="SoundMix" HorizontalAlignment="Center" Height="41" Margin="0,10,0,0" VerticalAlignment="Top" Width="115" FontSize="24" HorizontalContentAlignment="Center" FlowDirection="RightToLeft"/>
+        <TabControl x:Name="tabControl" HorizontalAlignment="Left" Height="460" Margin="97,93,-360,0" VerticalAlignment="Top" Width="378" Grid.RowSpan="2">
+            <TabItem Header="Combate" Margin="0,0,-4,-2">
+                <Grid Background="#FFE5E5E5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="21*"/>
+                        <ColumnDefinition Width="41*"/>
+                    </Grid.ColumnDefinitions>
+                    <ListBox x:Name="lbxCombate" HorizontalAlignment="Left" Height="432" VerticalAlignment="Top" Width="372" MouseDoubleClick="lbxCombate_MouseDoubleClick" Grid.ColumnSpan="2"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Enemigos Especificos">
+                <Grid Background="#FFE5E5E5" Margin="0,0,9,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <ListBox x:Name="lbxEnemigos" HorizontalAlignment="Left" Height="432" VerticalAlignment="Top" Width="363" Grid.ColumnSpan="2" MouseDoubleClick="lbxEnemigos_MouseDoubleClick"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Lugares">
+                <Grid Background="#FFE5E5E5" Margin="0,0,9,0">
+                    <ListBox x:Name="lbxLugares" HorizontalAlignment="Left" Height="432" VerticalAlignment="Top" Width="363" MouseDoubleClick="lbxLugares_MouseDoubleClick"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
+        <Label x:Name="lblSonidos" Content="Sonidos" HorizontalAlignment="Left" Margin="-344,51,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblMusica" Content="Musica" HorizontalAlignment="Left" Margin="97,56,-29,0" VerticalAlignment="Top"/>
+        <Button x:Name="btnPuerta" Content="Puerta" HorizontalAlignment="Left" Margin="-344,205,0,0" VerticalAlignment="Top" Width="75" Click="btnSonido" Grid.Row="1"/>
+        <Button x:Name="btnOrcos" Content="Orcos" HorizontalAlignment="Left" Margin="-344,134,0,0" VerticalAlignment="Top" Width="75" Click="btnSonido"/>
+        <Button x:Name="btnAvalancha" Content="Avalancha" HorizontalAlignment="Left" Margin="-344,159,0,0" VerticalAlignment="Top" Width="75" Click="btnSonido" Grid.Row="1"/>
+        <Button x:Name="btnZombies" Content="Zombies" HorizontalAlignment="Left" Margin="-344,88,0,0" VerticalAlignment="Top" Width="75" Click="btnSonido"/>
+        <Button x:Name="btnStopZombies" Content="" HorizontalAlignment="Left" Margin="-223,88,0,0" VerticalAlignment="Top" Width="20" Click="btnStopZombies_Click" IsEnabled="False">
+            <Button.Background>
+                <ImageBrush ImageSource="src/stop.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="btnLoopZombies" Content="" HorizontalAlignment="Left" Margin="-258,88,0,0" VerticalAlignment="Top" Width="20" Height="20" Click="btnLoopZombies_Click" Foreground="{x:Null}">
+            <Button.Background>
+                <ImageBrush ImageSource="src/noloop.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="btnLobos" Content="Lobos" HorizontalAlignment="Left" Margin="-344,178,0,0" VerticalAlignment="Top" Width="75" Click="btnSonido" Grid.RowSpan="2"/>
+        <Button x:Name="btnRisa1" Content="Risa 1" HorizontalAlignment="Left" Margin="-344,35,0,0" VerticalAlignment="Top" Width="75" Click="btnSonido" Grid.Row="1"/>
+        <Button x:Name="btnFuego" Content="Fuego" HorizontalAlignment="Left" Margin="-344,249,0,0" VerticalAlignment="Top" Width="75" Click="btnSonido" Grid.Row="1"/>
+        <Button x:Name="btnCadenas" Content="Cadenas" HorizontalAlignment="Left" Margin="-344,118,0,0" VerticalAlignment="Top" Width="75" Click="btnSonido" Grid.Row="1"/>
+        <Button x:Name="btnRisa2" Content="Risa 2" HorizontalAlignment="Left" Margin="-344,77,0,0" VerticalAlignment="Top" Width="75" Click="btnSonido" Grid.Row="1"/>
+        <Button x:Name="btnViento" Content="Viento" HorizontalAlignment="Left" Margin="-344,338,0,0" VerticalAlignment="Top" Width="75" Click="btnSonido" Grid.Row="1"/>
+        <Button x:Name="btnPlay" Content="" HorizontalAlignment="Left" Margin="97,384,-2,0" VerticalAlignment="Top" Width="20" Grid.Row="1" Foreground="{x:Null}" Click="btnPlay_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="src/play.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="btnStop" Content="" HorizontalAlignment="Left" Margin="136,384,-41,0" VerticalAlignment="Top" Width="20" Grid.Row="1" Foreground="{x:Null}" Click="btnStop_Click" IsEnabled="False">
+            <Button.Background>
+                <ImageBrush ImageSource="src/stop.png"/>
+            </Button.Background>
+        </Button>
+        <Label x:Name="lblSonando" Content="" HorizontalAlignment="Left" Margin="198,381,-360,0" VerticalAlignment="Top" Width="277" Grid.Row="1"/>
+        <Button x:Name="btnAgua" Content="Agua" HorizontalAlignment="Left" Margin="-344,296,0,0" VerticalAlignment="Top" Width="75" Click="btnSonido" Grid.Row="1"/>
+        <Button x:Name="btnLoopOrcos" Content="" HorizontalAlignment="Left" Margin="-258,134,0,36" Width="20" Click="btnLoopOrcos_Click" Foreground="{x:Null}">
+            <Button.Background>
+                <ImageBrush ImageSource="src/noloop.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="btnStopOrcos" Content="" HorizontalAlignment="Left" Margin="-223,134,0,0" Width="20" Click="btnStopOrcos_Click" IsEnabled="False" Height="20" VerticalAlignment="Top">
+            <Button.Background>
+                <ImageBrush ImageSource="src/stop.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="btnStopLobos" Content="" HorizontalAlignment="Left" Margin="-223,178,0,0" VerticalAlignment="Top" Width="20" Grid.RowSpan="2" Click="btnStopLobos_Click" IsEnabled="False">
+            <Button.Background>
+                <ImageBrush ImageSource="src/stop.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="btnLoopLobos" Content="" HorizontalAlignment="Left" Margin="-258,178,0,0" VerticalAlignment="Top" Width="20" Grid.RowSpan="2" Click="btnLoopLobos_Click" Foreground="{x:Null}">
+            <Button.Background>
+                <ImageBrush ImageSource="src/noloop.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="btnStopRisa1" Content="" HorizontalAlignment="Left" Margin="-223,35,0,0" VerticalAlignment="Top" Width="20" Grid.Row="1" Click="btnStopRisa1_Click" IsEnabled="False">
+            <Button.Background>
+                <ImageBrush ImageSource="src/stop.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="btnLoopRisa1" Content="" HorizontalAlignment="Left" Margin="-258,35,0,0" VerticalAlignment="Top" Width="20" Grid.Row="1" Click="btnLoopRisa1_Click" Foreground="{x:Null}">
+            <Button.Background>
+                <ImageBrush ImageSource="src/noloop.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="btnLoopRisa2" Content="" HorizontalAlignment="Left" Margin="-258,77,0,0" VerticalAlignment="Top" Width="20" Grid.Row="1" Click="btnLoopRisa2_Click" Foreground="{x:Null}">
+            <Button.Background>
+                <ImageBrush ImageSource="src/noloop.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="btnStopRisa2" Content="" HorizontalAlignment="Left" Margin="-223,77,0,0" VerticalAlignment="Top" Width="20" Grid.Row="1" Click="btnStopRisa2_Click" IsEnabled="False">
+            <Button.Background>
+                <ImageBrush ImageSource="src/stop.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="btnLoopAvalancha" Content="" HorizontalAlignment="Left" Margin="-258,159,0,0" VerticalAlignment="Top" Width="20" Grid.Row="1" Click="btnLoopAvalancha_Click" Foreground="{x:Null}">
+            <Button.Background>
+                <ImageBrush ImageSource="src/noloop.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="btnLoopPuerta" Content="" HorizontalAlignment="Left" Margin="-258,205,0,0" VerticalAlignment="Top" Width="20" Grid.Row="1" Click="btnLoopPuerta_Click" Foreground="{x:Null}">
+            <Button.Background>
+                <ImageBrush ImageSource="src/noloop.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="btnLoopFuego" Content="" HorizontalAlignment="Left" Margin="-258,249,0,0" VerticalAlignment="Top" Width="20" Grid.Row="1" Click="btnLoopFuego_Click" Foreground="{x:Null}">
+            <Button.Background>
+                <ImageBrush ImageSource="src/noloop.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="btnLoopAgua" Content="" HorizontalAlignment="Left" Margin="-258,296,0,0" VerticalAlignment="Top" Width="20" Grid.Row="1" Click="btnLoopAgua_Click" Foreground="{x:Null}">
+            <Button.Background>
+                <ImageBrush ImageSource="src/noloop.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="btnLoopCadenas" Content="" HorizontalAlignment="Left" Margin="-258,118,0,0" VerticalAlignment="Top" Width="20" Grid.Row="1" Click="btnLoopCadenas_Click" Foreground="{x:Null}">
+            <Button.Background>
+                <ImageBrush ImageSource="src/noloop.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="btnStopCadenas" Content="" HorizontalAlignment="Left" Margin="-223,118,0,0" VerticalAlignment="Top" Width="20" Grid.Row="1" Click="btnStopCadenas_Click" IsEnabled="False">
+            <Button.Background>
+                <ImageBrush ImageSource="src/stop.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="btnStopPuerta" Content="" HorizontalAlignment="Left" Margin="-223,205,0,0" VerticalAlignment="Top" Width="20" Grid.Row="1" Click="btnStopPuerta_Click" IsEnabled="False">
+            <Button.Background>
+                <ImageBrush ImageSource="src/stop.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="btnStopFuego" Content="" HorizontalAlignment="Left" Margin="-223,249,0,0" VerticalAlignment="Top" Width="20" Grid.Row="1" Click="btnStopFuego_Click" IsEnabled="False">
+            <Button.Background>
+                <ImageBrush ImageSource="src/stop.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="btnStopAvalancha" Content="" HorizontalAlignment="Left" Margin="-223,159,0,0" VerticalAlignment="Top" Width="20" Grid.Row="1" Click="btnStopAvalancha_Click" IsEnabled="False">
+            <Button.Background>
+                <ImageBrush ImageSource="src/stop.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="btnLoopViento" Content="" HorizontalAlignment="Left" Margin="-258,338,0,0" VerticalAlignment="Top" Width="20" Grid.Row="1" Click="btnLoopViento_Click" Foreground="{x:Null}">
+            <Button.Background>
+                <ImageBrush ImageSource="src/noloop.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="btnStopViento" Content="" HorizontalAlignment="Left" Margin="-223,338,0,0" VerticalAlignment="Top" Width="20" Grid.Row="1" Click="btnStopViento_Click" IsEnabled="False">
+            <Button.Background>
+                <ImageBrush ImageSource="src/stop.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="btnStopAgua" Content="" HorizontalAlignment="Left" Margin="-223,296,0,0" VerticalAlignment="Top" Width="20" Grid.Row="1" Click="btnStopAgua_Click" IsEnabled="False">
+            <Button.Background>
+                <ImageBrush ImageSource="src/stop.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="btnCanones" Content="Cañones" HorizontalAlignment="Left" Margin="-344,379,0,0" VerticalAlignment="Top" Width="75" Grid.Row="1" Click="btnSonido"/>
+        <Button x:Name="btnLoopCanones" Content="" HorizontalAlignment="Left" Margin="-258,379,0,0" VerticalAlignment="Top" Width="20" Grid.Row="1" Click="btnLoopCanones_Click" Foreground="{x:Null}">
+            <Button.Background>
+                <ImageBrush ImageSource="src/noloop.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="btnStopCanones" Content="" HorizontalAlignment="Left" Margin="-223,379,0,0" VerticalAlignment="Top" Width="20" Grid.Row="1" Click="btnStopCanones_Click" IsEnabled="False">
+            <Button.Background>
+                <ImageBrush ImageSource="src/stop.png"/>
+            </Button.Background>
+        </Button>
+        <Label x:Name="lblSoundZombies" Content="" HorizontalAlignment="Left" Margin="-182,90,0,0" VerticalAlignment="Top" Height="20" Width="20" Visibility="Collapsed">
+            <Label.Background>
+                <ImageBrush ImageSource="src/sound.png"/>
+            </Label.Background>
+        </Label>
+        <Label x:Name="lblSoundOrcos" Content="" HorizontalAlignment="Left" Margin="-182,134,0,0" VerticalAlignment="Top" Height="20" Width="20" Visibility="Collapsed">
+            <Label.Background>
+                <ImageBrush ImageSource="src/sound.png"/>
+            </Label.Background>
+        </Label>
+        <Label x:Name="lblSoundLobos" Content="" HorizontalAlignment="Left" Margin="-182,178,0,0" VerticalAlignment="Top" Height="20" Width="20" Grid.RowSpan="2" Visibility="Collapsed">
+            <Label.Background>
+                <ImageBrush ImageSource="src/sound.png"/>
+            </Label.Background>
+        </Label>
+        <Label x:Name="lblSoundRisa1" Content="" HorizontalAlignment="Left" Margin="-182,35,0,0" VerticalAlignment="Top" Height="20" Width="20" Grid.Row="1" Visibility="Collapsed">
+            <Label.Background>
+                <ImageBrush ImageSource="src/sound.png"/>
+            </Label.Background>
+        </Label>
+        <Label x:Name="lblSoundRisa2" Content="" HorizontalAlignment="Left" Margin="-182,77,0,0" VerticalAlignment="Top" Height="20" Width="20" Grid.Row="1" Visibility="Collapsed">
+            <Label.Background>
+                <ImageBrush ImageSource="src/sound.png"/>
+            </Label.Background>
+        </Label>
+        <Label x:Name="lblSoundCadenas" Content="" HorizontalAlignment="Left" Margin="-182,118,0,0" VerticalAlignment="Top" Height="20" Width="20" Grid.Row="1" Visibility="Collapsed">
+            <Label.Background>
+                <ImageBrush ImageSource="src/sound.png"/>
+            </Label.Background>
+        </Label>
+        <Label x:Name="lblSoundAvalancha" Content="" HorizontalAlignment="Left" Margin="-182,159,0,0" VerticalAlignment="Top" Height="20" Width="20" Grid.Row="1" Visibility="Collapsed">
+            <Label.Background>
+                <ImageBrush ImageSource="src/sound.png"/>
+            </Label.Background>
+        </Label>
+        <Label x:Name="lblSoundPuerta" Content="" HorizontalAlignment="Left" Margin="-182,205,0,0" VerticalAlignment="Top" Height="20" Width="20" Grid.Row="1" Visibility="Collapsed">
+            <Label.Background>
+                <ImageBrush ImageSource="src/sound.png"/>
+            </Label.Background>
+        </Label>
+        <Label x:Name="lblSoundFuego" Content="" HorizontalAlignment="Left" Margin="-182,249,0,0" VerticalAlignment="Top" Height="20" Width="20" Grid.Row="1" Visibility="Collapsed">
+            <Label.Background>
+                <ImageBrush ImageSource="src/sound.png"/>
+            </Label.Background>
+        </Label>
+        <Label x:Name="lblSoundAgua" Content="" HorizontalAlignment="Left" Margin="-182,296,0,0" VerticalAlignment="Top" Height="20" Width="20" Grid.Row="1" Visibility="Collapsed">
+            <Label.Background>
+                <ImageBrush ImageSource="src/sound.png"/>
+            </Label.Background>
+        </Label>
+        <Label x:Name="lblSoundViento" Content="" HorizontalAlignment="Left" Margin="-182,338,0,0" VerticalAlignment="Top" Height="20" Width="20" Grid.Row="1" Visibility="Collapsed">
+            <Label.Background>
+                <ImageBrush ImageSource="src/sound.png"/>
+            </Label.Background>
+        </Label>
+        <Label x:Name="lblSoundCanones" Content="" HorizontalAlignment="Left" Margin="-182,379,0,0" VerticalAlignment="Top" Height="20" Width="20" Grid.Row="1" Visibility="Collapsed">
+            <Label.Background>
+                <ImageBrush ImageSource="src/sound.png"/>
+            </Label.Background>
+        </Label>
+        <Button x:Name="btnCuerno" Content="Cuerno" HorizontalAlignment="Left" Margin="-138,86,0,0" VerticalAlignment="Top" Width="75" Click="btnSonido"/>
+        <Button x:Name="btnStopCuerno" Content="" HorizontalAlignment="Left" Margin="-17,86,0,0" VerticalAlignment="Top" Width="20" Click="btnStopCuerno_Click" IsEnabled="False">
+            <Button.Background>
+                <ImageBrush ImageSource="src/stop.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="btnLoopCuerno" Content="" HorizontalAlignment="Left" Margin="-52,86,0,0" VerticalAlignment="Top" Width="20" Height="20" Click="btnLoopCuerno_Click" Foreground="{x:Null}">
+            <Button.Background>
+                <ImageBrush ImageSource="src/noloop.png"/>
+            </Button.Background>
+        </Button>
+        <Label x:Name="lblSoundCuerno" Content="" HorizontalAlignment="Left" Margin="24,88,0,0" VerticalAlignment="Top" Height="20" Width="20" Visibility="Collapsed">
+            <Label.Background>
+                <ImageBrush ImageSource="src/sound.png"/>
+            </Label.Background>
+        </Label>
+        <Button x:Name="btnTormenta" Content="Tormenta" HorizontalAlignment="Left" Margin="-138,132,0,0" VerticalAlignment="Top" Width="75" Click="btnSonido"/>
+        <Button x:Name="btnStopTormenta" Content="" HorizontalAlignment="Left" Margin="-17,132,0,0" VerticalAlignment="Top" Width="20" Click="btnStopTormenta_Click" IsEnabled="False">
+            <Button.Background>
+                <ImageBrush ImageSource="src/stop.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="btnLoopTormenta" Content="" HorizontalAlignment="Left" Margin="-52,132,0,0" VerticalAlignment="Top" Width="20" Height="20" Click="btnLoopTormenta_Click" Foreground="{x:Null}">
+            <Button.Background>
+                <ImageBrush ImageSource="src/noloop.png"/>
+            </Button.Background>
+        </Button>
+        <Label x:Name="lblSoundTormenta" Content="" HorizontalAlignment="Left" Margin="24,134,0,0" VerticalAlignment="Top" Height="20" Width="20" Visibility="Collapsed">
+            <Label.Background>
+                <ImageBrush ImageSource="src/sound.png"/>
+            </Label.Background>
+        </Label>
+        <Button x:Name="btnLoop" Content="" HorizontalAlignment="Left" Margin="173,384,-78,0" VerticalAlignment="Top" Width="20" Grid.Row="1" Foreground="{x:Null}" Click="btnLoop_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="src/noloop.png"/>
+            </Button.Background>
+        </Button>
+        <Label x:Name="lblLogo" Content="" HorizontalAlignment="Left" Margin="134,10,-50,0" VerticalAlignment="Top" Height="41" Width="41">
+            <Label.Background>
+                <ImageBrush ImageSource="src/279541.png"/>
+            </Label.Background>
+        </Label>
+
+    </Grid>
+</Window>
